@@ -54,20 +54,33 @@ class SiteFooter extends React.Component {
     return (
       <footer
         role="contentinfo"
-        className="footer d-flex border-top py-3 px-4"
+        className="footer border-top py-3 px-4 footer-basic"
       >
-        <div className="container-fluid d-flex">
-          <a
-            className="d-block"
-            href={config.LMS_BASE_URL}
-            aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}
-          >
-            <img
-              style={{ maxHeight: 45 }}
-              src={logo || config.LOGO_TRADEMARK_URL}
-              alt={intl.formatMessage(messages['footer.logo.altText'])}
-            />
-          </a>
+        <div className="">
+          {/*<a*/}
+          {/*    className="d-block"*/}
+          {/*    href={config.LMS_BASE_URL}*/}
+          {/*    aria-label={intl.formatMessage(messages['footer.logo.ariaLabel'])}*/}
+          {/*>*/}
+          <div className="social">
+            <a href="#"><i className="icon ion-social-instagram"></i></a>
+            <a href="#"><i className="icon ion-social-twitter"></i></a>
+            <a href="#"><i className="icon ion-social-facebook"></i></a>
+          </div>
+          <ul className="list-inline">
+            <li className="list-inline-item"><a href="#">Home</a></li>
+            <li className="list-inline-item"><a href="#">Services</a></li>
+            <li className="list-inline-item"><a href="#">About</a></li>
+            <li className="list-inline-item"><a href="#">Terms</a></li>
+            <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
+          </ul>
+          <p className="copyright">eduNEXT © {new Date().getFullYear()}</p>
+          <img
+            style={{ maxHeight: 45 }}
+            src={logo || config.LOGO_TRADEMARK_URL}
+            alt={intl.formatMessage(messages['footer.logo.altText'])}
+          />
+          {/*</a>*/}
           <div className="flex-grow-1" />
           {showLanguageSelector && (
             <LanguageSelector
