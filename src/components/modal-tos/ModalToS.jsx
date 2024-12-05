@@ -79,9 +79,10 @@ const ModalToS = () => {
       remove(e.target.value);
     }
   };
+  console.debug( new Date(dateIso8601), 'dateJoined', dateJoined, new Date(dateIso8601) < new Date(dateJoined));
 
-  if (tosPreference || !dateIso8601 || !username
-    || new Date(dateIso8601) < new Date(dateJoined)) {
+  if (tosPreference || !dateIso8601 || !username || !dateJoined
+    || new Date(dateIso8601) <= new Date(dateJoined)) {
     return null;
   }
 
