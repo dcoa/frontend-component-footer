@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  changeUserSessionLanguage, getPrimaryLanguageSubtag, getSupportedLocaleList, getLocale,
+  changeUserSessionLanguage, getPrimaryLanguageSubtag, getLocale,
 } from '@edx/frontend-platform/i18n';
 import { Dropdown, Scrollable, useWindowSize } from '@openedx/paragon';
 import { Language } from '@openedx/paragon/icons';
@@ -16,7 +16,7 @@ const LanguageSelector = ({
 }) => {
   const [currentLocale, setLocale] = useState(getLocale());
   const { width } = useWindowSize();
-  const options = supportedLanguages.length > 0 ? supportedLanguages : getSupportedLocaleList();
+  const options = supportedLanguages.length > 0 ? supportedLanguages : ['en'];
 
   const handleSelect = async (selectedLocale) => {
     if (currentLocale !== selectedLocale) {
