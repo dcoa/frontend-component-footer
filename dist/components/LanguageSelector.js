@@ -10,7 +10,7 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { changeUserSessionLanguage, getPrimaryLanguageSubtag, getLocale } from '@edx/frontend-platform/i18n';
+import { changeUserSessionLanguage, getPrimaryLanguageSubtag, getSupportedLocaleList, getLocale } from '@edx/frontend-platform/i18n';
 import { Dropdown, Scrollable, useWindowSize } from '@openedx/paragon';
 import { Language } from '@openedx/paragon/icons';
 var getLocaleName = function getLocaleName(locale) {
@@ -31,7 +31,7 @@ var LanguageSelector = function LanguageSelector(_ref) {
     setLocale = _useState2[1];
   var _useWindowSize = useWindowSize(),
     width = _useWindowSize.width;
-  var options = supportedLanguages.length > 0 ? supportedLanguages : ['en'];
+  var options = supportedLanguages.length > 0 ? supportedLanguages : getSupportedLocaleList();
   var handleSelect = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(selectedLocale) {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
